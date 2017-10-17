@@ -37,6 +37,31 @@ const template = [
           var text = document.getElementById('text')
           fs.writeFile(fileName, text.value)
         }
+      },
+      {
+        label:'開新檔案',
+        accelerator:'cmdOrCtrl+n',
+        click:function(){
+          var filePath=document.getElementById('filePath')
+          filePath.innerText=""
+          var text=document.getElementById('text')
+          text.value=""
+        }
+      },
+      {
+        label:'另存新檔',
+        accelerator:'cmdOrCtrl+a',
+        click: function(){
+          dialog.showSaveDialog(
+            function(fileName){
+              var text=document.getElementById('text')
+              fs.writeFile(fileName,text.value)
+            }
+          )
+        }
+      },
+      {
+        label:'Exit',role:'close'
       }
     ]
   },

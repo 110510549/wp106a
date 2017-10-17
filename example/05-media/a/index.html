@@ -20,9 +20,10 @@ function OpenFile() {
         filePath.innerText = fileName
         var videoControl = document.getElementById('videoControl')
         videoControl.setAttribute("src", fileName)
+        console.log('fileName=' , file)
       }
     )
-  console.log('file=' , file)
+  
 }
 </script>
   <button onclick="OpenFile()">OpenFile</button>
